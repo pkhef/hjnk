@@ -3296,10 +3296,7 @@
                 return `• ${c.name} — ${qty} ~ ${formatRub(c.totalCost)}`;
             });
             const total = toBuy.reduce((sum, c) => sum + c.totalCost, 0);
-            const text = `🛒 Список покупок в Ленту-227:
-${lines.join('
-')}
-Итого: ~${formatRub(total)}`;
+            const text = `🛒 Список покупок в Ленту-227:\n${lines.join('\n')}\nИтого: ~${formatRub(total)}`;
 
             const ta = document.createElement('textarea');
             ta.value = text;
@@ -3522,8 +3519,7 @@ ${lines.join('
             const lazyActive = parseInt(document.getElementById('crLazyActive').value) || 15;
             const lazyWait = parseInt(document.getElementById('crLazyWait').value) || 0;
             const lazySteps = document.getElementById('crLazySteps').value
-                .split('
-')
+                .split('\n')
                 .map(s => s.replace(/^\d+[\.\)]\s*/, '').trim())
                 .filter(Boolean);
 
@@ -3541,8 +3537,7 @@ ${lines.join('
                 const proActive = parseInt(document.getElementById('crProActive').value) || 25;
                 const proWait = parseInt(document.getElementById('crProWait').value) || 0;
                 const proSteps = document.getElementById('crProSteps').value
-                    .split('
-')
+                    .split('\n')
                     .map(s => s.replace(/^\d+[\.\)]\s*/, '').trim())
                     .filter(Boolean);
                 variants.pro = {
